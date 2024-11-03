@@ -4,6 +4,7 @@ This repository contains assignments and projects completed as part of the Cyber
 
 ## Logbook
 
-| **Date**   | **Hours** | **Description**                              |
-| :---       | :---:     | :---                                         |
-| 2024-02-11 | 2 h       | Lecture 1 and Git Repository initialization. |
+| **Date**   | **Hours** | **Description**                                  |
+| :---       | :---:     | :---                                             |
+| 2024-02-11 | 2 h       | Lecture 1 and Git Repository initialization.     |
+| 2024-02-11 | 1 h       | Cisco Introduction to Cybersecurity introduction |
