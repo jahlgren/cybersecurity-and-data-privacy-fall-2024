@@ -11,3 +11,5 @@ This repository contains assignments and projects completed as part of the Cyber
 | 2024-11-05 | 2 h       | Finished Module 1 in Cisco Introduction to Cybersecurity. |
 | 2024-11-07 | 3 h       | Finished Module 2 in Cisco Introduction to Cybersecurity. |
 | 2024-11-07 | 3 h       | Finished Module 3 in Cisco Introduction to Cybersecurity. |
+| 2024-11-08 | 3 h       | Finished Module 4 in Cisco Introduction to Cybersecurity. |
+| 2024-11-08 | 2 h       | Finished Module 5 and the final exam in Cisco Introduction to Cybersecurity. |
