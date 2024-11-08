@@ -6,6 +6,8 @@ This repository contains assignments and projects completed as part of the Cyber
 
 | **Date**   | **Hours** | **Description**                                           |
 | :---       | :---:     | :---                                                      |
-| 2024-02-11 | 2 h       | Lecture 1 and Git Repository initialization.              |
-| 2024-02-11 | 1 h       | Started working with Cisco Introduction to Cybersecurity. |
-| 2024-05-11 | 2 h       | Finished Module 1 in Cisco Introduction to Cybersecurity. |
+| 2024-11-02 | 2 h       | Lecture 1 and Git Repository initialization.              |
+| 2024-11-02 | 1 h       | Started working with Cisco Introduction to Cybersecurity. |
+| 2024-11-05 | 2 h       | Finished Module 1 in Cisco Introduction to Cybersecurity. |
+| 2024-11-07 | 3 h       | Finished Module 2 in Cisco Introduction to Cybersecurity. |
+| 2024-11-07 | 3 h       | Finished Module 3 in Cisco Introduction to Cybersecurity. |
