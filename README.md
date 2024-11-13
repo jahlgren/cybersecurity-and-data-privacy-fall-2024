@@ -19,3 +19,4 @@ This repository contains assignments and projects completed as part of the Cyber
 | 2024-11-11 | 0.5 h     | PortSwigger Lab: SQL injection attack, querying the database type and version on Oracle |
 | 2024-11-11 | 0.5 h     | PortSwigger Lab: SQL injection attack, querying the database type and version on MySQL and Microsoft |
 | 2024-11-12 | 1 h       | Started with the Booking App: Project initialization and Docker Database |
+| 2024-11-13 | 0.5 h     | PortSwigger Lab: SQL injection attack, listing the database contents on non-Oracle databases |
