@@ -14,9 +14,21 @@ This repository contains assignments and projects completed as part of the Cyber
 | 2024-11-08 | 3 h       | Finished Module 4 in Cisco Introduction to Cybersecurity. |
 | 2024-11-08 | 2 h       | Finished Module 5 and the final exam in Cisco Introduction to Cybersecurity. |
 | 2024-11-10 | 1 h       | Reviewed PortSwigger's SQL Injection topic |
-| 2024-11-10 | 0.5 h     | PortSwigger Lab: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data |
-| 2024-11-10 | 0.5 h     | PortSwigger Lab: SQL injection vulnerability allowing login bypass |
-| 2024-11-11 | 0.5 h     | PortSwigger Lab: SQL injection attack, querying the database type and version on Oracle |
-| 2024-11-11 | 0.5 h     | PortSwigger Lab: SQL injection attack, querying the database type and version on MySQL and Microsoft |
+| 2024-11-10 | 0.5 h     | Solved PortSwigger Lab: SQL injection vulnerability in WHERE clause allowing retrieval of hidden data |
+| 2024-11-10 | 0.5 h     | Solved PortSwigger Lab: SQL injection vulnerability allowing login bypass |
+| 2024-11-11 | 0.5 h     | Solved PortSwigger Lab: SQL injection attack, querying the database type and version on Oracle |
+| 2024-11-11 | 0.5 h     | Solved PortSwigger Lab: SQL injection attack, querying the database type and version on MySQL and Microsoft |
 | 2024-11-12 | 1 h       | Started with the Booking App: Project initialization and Docker Database |
-| 2024-11-13 | 0.5 h     | PortSwigger Lab: SQL injection attack, listing the database contents on non-Oracle databases |
+| 2024-11-13 | 0.5 h     | Solved PortSwigger Lab: SQL injection attack, listing the database contents on non-Oracle databases |
+| 2024-11-13 | 1 h       | Reviewed PortSwigger's Authentication topic |
+| 2024-11-13 | 0.5 h     | Solved PortSwigger Lab: Username enumeration via different responses |
+| 2024-11-13 | 0.5 h     | Solved PortSwigger Lab: 2FA simple bypass |
+| 2024-11-13 | 0.5 h     | Solved PortSwigger Lab: Password reset broken logic |
+| 2024-11-14 | 0.5 h     | Solved PortSwigger Lab: Username enumeration via subtly different responses |
+| 2024-11-14 | 0.5 h     | Solved PortSwigger Lab: Username enumeration via response timing |
+| 2024-11-14 | 1 h       | Reviewed PortSwigger's Access Control topic|
+| 2024-11-14 | 0.5 h     | Solved PortSwigger Lab: Unprotected admin functionality|
+| 2024-11-14 | 0.5 h     | Solved PortSwigger Lab: Unprotected admin functionality with unpredictable URL|
+| 2024-11-14 | 0.5 h     | Solved PortSwigger Lab: User role controlled by request parameter |
+| 2024-11-14 | 0.5 h     | Solved PortSwigger Lab: User role can be modified in user profile |
+| 2024-11-14 | 0.5 h     | Solved PortSwigger Lab: User ID controlled by request parameter |
