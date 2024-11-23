@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "start": "deno run --allow-read=public/,views/ --allow-net main.ts"
+    "start": "deno run --allow-read=public/,views/ --allow-net --allow-env --env-file=.env main.ts"
   },
   "compilerOptions": {
     "jsx": "precompile",

@@ -2,6 +2,16 @@
 
 This repository contains assignments and projects completed as part of the Cybersecurity and Data Privacy course at Centria University of Applied Sciences.
 
+## Dev
+
+You need to rename `.env-template` to `.env` and fill in the missing details.
+
+To start the Deno server:
+
+```
+deno run start
+```
+
 ## Logbook
 
 | **Date**   | **Hours** | **Description**                                           |
@@ -36,3 +46,6 @@ This repository contains assignments and projects completed as part of the Cyber
 | 2024-11-16 | 2 h       | Continued working on the Booking App: Registration page, project setup |
 | 2024-11-17 | 2 h       | Continued working on the Booking App: Registration page, html and css |
 | 2024-11-22 | 3 h       | Continued working on the Booking App: Registration page, more styling and touch ups |
+| 2024-11-22 | 3 h       | Installed ZAP, reviewed a few tutorials on how to use ZAP. |
+| 2024-11-23 | 1 h       | Performed security test on the registration page: [Registration Report 1](security-test-registration-page-1.md) |
+| 2024-11-23 | 3 h       | Fixed the security issues detailed in Registration Report 1. I had to include correct CSP, sanitize input and output, email validation, duplicate user checks: [Registration Report 2](security-test-registration-page-2.md) |
