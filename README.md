@@ -32,3 +32,7 @@ This repository contains assignments and projects completed as part of the Cyber
 | 2024-11-14 | 0.5 h     | Solved PortSwigger Lab: User role controlled by request parameter |
 | 2024-11-14 | 0.5 h     | Solved PortSwigger Lab: User role can be modified in user profile |
 | 2024-11-14 | 0.5 h     | Solved PortSwigger Lab: User ID controlled by request parameter |
+| 2024-11-14 | 1.5 h     | Completed reflection on PortSwigger labs exercises |
+| 2024-11-16 | 2 h       | Continued working on the Booking App: Registration page, project setup |
+| 2024-11-17 | 2 h       | Continued working on the Booking App: Registration page, html and css |
+| 2024-11-22 | 3 h       | Continued working on the Booking App: Registration page, more styling and touch ups |
