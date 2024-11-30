@@ -2,6 +2,7 @@ import { Context } from '@hono/hono';
 import client from './../db.ts';
 import * as bcrypt from 'https://deno.land/x/bcrypt/mod.ts';
 import { z } from 'https://deno.land/x/zod@v3.16.1/mod.ts';
+import { sanitizeHtmlOutput } from "../utils.ts";
 
 const registrationSchema = z.object({
   username: z.string().email({ message: 'Invalid email address' }).max(50, 'Email must not exceed 50 characters'),
@@ -16,10 +17,6 @@ const registrationSchema = z.object({
 async function isUniqueUsername(username: string) {
   const result = await client.queryArray(`SELECT username FROM cbkapp_users WHERE username = $1`, [username]);
   return result.rows.length === 0;
-}
-
-function sanitizeOutput(value: string) {
-  return value.replace(/>/g, '&gt;').replace(/</g, '&lt;');
 }
 
 export default async function postRegister(c: Context) {
@@ -56,7 +53,7 @@ export default async function postRegister(c: Context) {
     return c.html('User registered successfully!');
   } catch (error) {
     if (error instanceof z.ZodError) {
-      return c.html(`Validation Error: ${error.errors.map(e => sanitizeOutput(e.message)).join(", ")}`, 400);
+      return c.html(`Validation Error: ${error.errors.map(e => sanitizeHtmlOutput(e.message)).join(", ")}`, 400);
     }
     console.error(error);
     return c.html('Error during registration', 500);

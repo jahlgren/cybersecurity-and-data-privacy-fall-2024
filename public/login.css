@@ -2,7 +2,7 @@ body {
   display: flex;
   margin: 1rem;
   min-height: 100vh; /* <-- Does not work correctly on some phones.. */
-  background-color: rgb(232, 235, 241);
+  background-color: rgb(222, 233, 255);
 }
 
 main {

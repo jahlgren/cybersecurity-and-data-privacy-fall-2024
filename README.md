@@ -49,3 +49,4 @@ deno run start
 | 2024-11-22 | 3 h       | Installed ZAP, reviewed a few tutorials on how to use ZAP. |
 | 2024-11-23 | 1 h       | Performed security test on the registration page: [Registration Report 1](security-test-registration-page-1.md) |
 | 2024-11-23 | 3 h       | Fixed the security issues detailed in Registration Report 1. I had to include correct CSP, sanitize input and output, email validation, duplicate user checks: [Registration Report 2](security-test-registration-page-2.md) |
+| 2024-11-25 | 2 h       | Started working on the login page |
