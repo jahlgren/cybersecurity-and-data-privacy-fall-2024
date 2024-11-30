@@ -1,6 +1,5 @@
 import { Client } from "https://deno.land/x/postgres/mod.ts";
 
-// Set up PostgreSQL client connection
 const client = new Client({
   hostname: Deno.env.get('DB_HOSTNAME'),
   port: Deno.env.get('DB_PORT'),

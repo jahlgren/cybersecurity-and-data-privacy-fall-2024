@@ -1,7 +1,7 @@
 import { Context } from "@hono/hono";
 import { z } from 'https://deno.land/x/zod@v3.16.1/mod.ts';
 import * as bcrypt from 'https://deno.land/x/bcrypt/mod.ts';
-import client from "../db.ts";
+import client from "../db/client.ts";
 
 const ERROR_LOGIN_MESSAGE = 'Invalid username and/or password.';
 

@@ -50,3 +50,5 @@ deno run start
 | 2024-11-23 | 1 h       | Performed security test on the registration page: [Registration Report 1](security-test-registration-page-1.md) |
 | 2024-11-23 | 3 h       | Fixed the security issues detailed in Registration Report 1. I had to include correct CSP, sanitize input and output, email validation, duplicate user checks: [Registration Report 2](security-test-registration-page-2.md) |
 | 2024-11-25 | 2 h       | Started working on the login page |
+| 2024-11-26 | 5 h       | Refactored the project.. new project structure and only using Deno without Hono. |
+| 2024-11-27 | 5 h       | Continued on refactoring the project. Also did the ZAP tests again on the register page after the refactor, no new vulnerabilities found. |
