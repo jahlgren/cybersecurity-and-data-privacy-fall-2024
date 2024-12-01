@@ -3,22 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register - Booking App</title>
+  <title>Login - Booking App</title>
   <link rel="stylesheet" href="./main.css">
   <link rel="stylesheet" href="./login.css">
 </head>
 <body>
   <main>
     <h1>Login</h1>
-    <form action="/api/login" method="POST">
+    <form action="/login" method="POST">
       <label>
         <span>Email</span>
-        <input type="email" name="username">
+        <input type="email" name="email" 
+          <% if(it.email) { %>
+            value="<%= it.email %>"
+          <% } %>
+        >
       </label>
       <label>
         <span>Password</span>
         <input type="password" name="password">
       </label>
+      <% if(it.error) { %>
+        <p class="error"><%= it.error %></p>
+      <% } %>
       <button type="submit" class="primary">Login</button>
     </form>
   </main>

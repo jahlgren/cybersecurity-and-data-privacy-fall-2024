@@ -1,43 +1,10 @@
-// import { Context, Hono } from '@hono/hono';
-// import { serveStatic } from '@hono/hono/deno';
-// import postRegister from './src/routes/postRegister.ts';
-// import postLogin from './src/routes/postLogin.ts';
-
-// const app = new Hono();
-
-// app.get('/register', async (c: Context) => {
-//   return c.html(await Deno.readTextFile('./src/views/register.html'));
-// });
-
-// app.use((c, next) => {
-//   // Security headers
-//   c.header('X-Content-Type-Options', 'nosniff');
-//   c.header('X-XSS-Protection', '1; mode=block');
-//   c.header('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
-//   c.header('X-Frame-Options', 'DENY');
-//   c.header('Content-Security-Policy', `default-src 'self'; script-src 'self'; script-src-elem 'self'; style-src 'self'; style-src-elem 'self'; img-src 'self'; connect-src 'self'; frame-src 'self'; frame-ancestors 'self'; font-src 'self'; media-src 'self'; object-src 'self'; manifest-src 'self'; worker-src 'self'; form-action 'self';`);
-  
-//   return next();
-// });
-
-// app.use('/*', serveStatic({ root: './public' }));
-
-// app.get('/register', async (c: Context) => {
-//   return c.html(await Deno.readTextFile('./views/register.html'));
-// });
-
-// app.get('/login', async (c: Context) => {
-//   return c.html(await Deno.readTextFile('./views/login.html'));
-// });
-
-// app.post('/api/register', postRegister);
-// app.post('/api/login', postLogin);
-
-// Deno.serve(app.fetch);
-
 import * as path from "jsr:@std/path";
 import handleGetRegister from "./src/routes/get/register.ts";
 import handlePostRegister from "./src/routes/post/register.ts";
+import handleGetLogin from "./src/routes/get/login.ts";
+import handlePostlogin from "./src/routes/post/login.ts";
+import handleGetIndex from "./src/routes/get/index.ts";
+import handleGetLogout from "./src/routes/get/logout.ts";
 
 const PORT = 8000;
 const SCRIPT_DIR = new URL(".", import.meta.url).pathname.substring(1);
@@ -55,17 +22,21 @@ const MIME_TYPES: Record<string, string> = {
   json: 'application/json',
 };
 
-const ROUTES: {[method: string]: {[routeName: string]: (req: Request) => Promise<Response>}} = {
+const ROUTES: {[method: string]: {[routeName: string]: (req: Request, info: Deno.ServeHandlerInfo<Deno.NetAddr>) => Promise<Response>}} = {
   GET: {
-    '/register': handleGetRegister
+    '/register': handleGetRegister,
+    '/login': handleGetLogin,
+    '/logout': handleGetLogout,
+    '/': handleGetIndex,
   },
   POST: {
-    '/register': handlePostRegister
+    '/register': handlePostRegister,
+    '/login': handlePostlogin
   }
 }
 
-const middleware = (handler: (req: Request) => Promise<Response>) => async (req: Request) => {
-  const response = await handler(req);
+const middleware = (handler: (req: Request, info: Deno.ServeHandlerInfo<Deno.NetAddr>) => Promise<Response>) => async (req: Request, info: Deno.ServeHandlerInfo<Deno.NetAddr>) => {
+  const response = await handler(req, info);
 
   response.headers.set('X-Content-Type-Options', 'nosniff');
   response.headers.set('X-XSS-Protection', '1; mode=block');
@@ -90,14 +61,14 @@ const middleware = (handler: (req: Request) => Promise<Response>) => async (req:
   return response;
 }
 
-const handler = async (req: Request) => {
+const handler = async (req: Request, info: Deno.ServeHandlerInfo<Deno.NetAddr>) => {
 
   let response: Response|null;
 
   if((response = await serveStaticFile(req)))
     return response;
   
-  if((response = await serveRoute(req)))
+  if((response = await serveRoute(req, info)))
     return response;
 
   return new Response('Resource not found..', { status: 404 });
@@ -120,7 +91,7 @@ const serveStaticFile = async (req: Request): Promise<Response|null> => {
   }
 }
 
-const serveRoute = async (req: Request): Promise<Response|null> => {
+const serveRoute = async (req: Request, info: Deno.ServeHandlerInfo<Deno.NetAddr>): Promise<Response|null> => {
   const method = req.method.toUpperCase();
 
   const routes = ROUTES[method];
@@ -135,7 +106,7 @@ const serveRoute = async (req: Request): Promise<Response|null> => {
   if(!handler)
     return null;
 
-  return await handler(req);
+  return await handler(req, info);
 }
 
 Deno.serve({ port: PORT }, middleware(handler));

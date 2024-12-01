@@ -41,6 +41,14 @@ CREATE TABLE cbkapp_admin_logs (
     timestamp TIMESTAMP DEFAULT NOW()
 );
 
+-- Login logs table
+CREATE TABLE cbkapp_login_logs (
+    log_id SERIAL PRIMARY KEY,
+    user_token UUID NOT NULL REFERENCES cbkapp_users(user_token) ON DELETE CASCADE,
+    login_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    ip_address VARCHAR(45) NOT NULL
+);
+
 -- Function to check if the user is over 15 years old before making a reservation
 CREATE OR REPLACE FUNCTION cbkapp_check_age() RETURNS TRIGGER AS $$
 BEGIN

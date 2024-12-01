@@ -1,8 +1,6 @@
 body {
   display: flex;
-  margin: 1rem;
   min-height: 100vh; /* <-- Does not work correctly on some phones.. */
-  background-color: rgb(222, 233, 255);
 }
 
 main {
@@ -17,4 +15,8 @@ main {
 
 button {
   margin-top: 2rem;
+}
+
+.error {
+  color: rgb(204, 17, 17);
 }
