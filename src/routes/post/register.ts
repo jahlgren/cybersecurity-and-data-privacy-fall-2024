@@ -1,6 +1,7 @@
 import { z } from 'https://deno.land/x/zod@v3.16.1/mod.ts';
 import { createUser, UsernameNotAvailableError } from "../../services/user-service.ts";
 import { renderFile, renderTemplate } from "../../render.ts";
+import { RequestContext } from "../../shared-types.ts";
 
 const schema = z.object({
   email: z.string().email({ message: 'Invalid email address' }).max(50, 'Email must not exceed 50 characters'),
@@ -20,8 +21,8 @@ export function sanitizeHtmlOutput(value: string) {
   return value.replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
-const handlePostRegister = async (req: Request) => {
-  const formData = await req.formData();
+const handlePostRegister = async ({request}: RequestContext) => {
+  const formData = await request.formData();
 
   const email = formData.get('email') as string||'';
   const birthdate = formData.get('birthdate') as string||'';;

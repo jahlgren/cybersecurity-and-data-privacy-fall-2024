@@ -1,10 +1,8 @@
 import * as bcrypt from 'https://deno.land/x/bcrypt/mod.ts';
 import client from "../db/client.ts";
-import { getUserByUsername } from "./user-service.ts";
-import { createSession } from "./session-service.ts";
-import { Cookie } from "https://deno.land/std@0.224.0/http/cookie.ts";
+import { getUserByUsername, User } from "./user-service.ts";
 
-export const login = async (username: string, password: string, ipAddress: string): Promise<Cookie|null> => {
+export const login = async (username: string, password: string, ipAddress: string): Promise<User|null> => {
   const user = await getUserByUsername(username);
 
   if(!user) {
@@ -17,15 +15,7 @@ export const login = async (username: string, password: string, ipAddress: strin
   }
 
   await logLogin(user.userToken, ipAddress);
-  const sessionId = createSession(user);
-  return {
-    name: 'sessionId',
-    value: sessionId,
-    httpOnly: true,
-    secure: true,
-    sameSite: 'Strict',
-    path: '/'
-  };
+  return user;
 }
 
 export const logLogin = async (userToken: string, ipAddress: string) => {

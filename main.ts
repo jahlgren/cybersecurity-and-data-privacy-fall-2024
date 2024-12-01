@@ -5,6 +5,9 @@ import handleGetLogin from "./src/routes/get/login.ts";
 import handlePostlogin from "./src/routes/post/login.ts";
 import handleGetIndex from "./src/routes/get/index.ts";
 import handleGetLogout from "./src/routes/get/logout.ts";
+import { RequestContext } from "./src/shared-types.ts";
+import { getSession } from "./src/services/session-service.ts";
+import { setCookie } from "https://deno.land/std@0.224.0/http/cookie.ts";
 
 const PORT = 8000;
 const SCRIPT_DIR = new URL(".", import.meta.url).pathname.substring(1);
@@ -22,7 +25,8 @@ const MIME_TYPES: Record<string, string> = {
   json: 'application/json',
 };
 
-const ROUTES: {[method: string]: {[routeName: string]: (req: Request, info: Deno.ServeHandlerInfo<Deno.NetAddr>) => Promise<Response>}} = {
+// const ROUTES: {[method: string]: {[routeName: string]: (req: Request, info: Deno.ServeHandlerInfo<Deno.NetAddr>) => Promise<Response>}} = {
+const ROUTES: {[method: string]: {[routeName: string]: (context: RequestContext) => Promise<Response>}} = {
   GET: {
     '/register': handleGetRegister,
     '/login': handleGetLogin,
@@ -106,7 +110,27 @@ const serveRoute = async (req: Request, info: Deno.ServeHandlerInfo<Deno.NetAddr
   if(!handler)
     return null;
 
-  return await handler(req, info);
+  const {session, sessionId, isNewSession} = getSession(req);
+
+  const response = await handler({
+    request: req,
+    remoteAddress: info.remoteAddr,
+    session
+  });
+
+  if(isNewSession) {
+    setCookie(response.headers, {
+      name: 'sessionId',
+      value: sessionId,
+      httpOnly: true,
+      secure: true,
+      sameSite: 'Strict',
+      path: '/',
+      domain: 'localhost' // <- should be the fully qualified domain name..
+    });
+  }
+
+  return response;
 }
 
 Deno.serve({ port: PORT }, middleware(handler));

@@ -1,10 +1,9 @@
 import { renderTemplate } from "../../render.ts";
-import { getSession } from "../../services/session-service.ts";
+import { RequestContext } from "../../shared-types.ts";
 
-const handleGetIndex = async (req: Request) => {
-  const session = getSession(req);
+const handleGetIndex = async ({session}: RequestContext) => {
   return await renderTemplate('index', {
-    user: session ? { username: session.username } : undefined
+    user: session && session.user ? { username: session.user.username } : undefined
   });
 }
 
