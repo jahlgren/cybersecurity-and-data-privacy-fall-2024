@@ -56,3 +56,5 @@ deno run start
 | 2024-11-27 | 0.5 h     | Performed security test on the login page: [Login Report 1](tests/security-test-login-page-1.md) 
 | 2024-12-01 | 3 h       | Fixing the security issue found in the security test "CSRF" on the login page. I added a CSRF-token to the session and validating it with a CSRF-token sent from the login form from the login page. |
 | 2024-12-01 | 0.5 h     | Performed security test on the login page: [Login Report 2](tests/security-test-login-page-2.md) 
+| 2024-12-05 | 4 h       | Started implementing resources and reservations 
+| 2024-12-05 | 3 h       | Finished implementing resources and reservations. Admins can add and delete resources. Signed in user can add and delete reservations (admins can delete all reservations and reservers can only delete their own reservations.). Unauthenticated users will only see reservations, but not who the reserver is. 
