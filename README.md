@@ -2,6 +2,11 @@
 
 This repository contains assignments and projects completed as part of the Cybersecurity and Data Privacy course at Centria University of Applied Sciences.
 
+## Screenshots of the App
+
+You can view some screenshots of the app in action in the following file:
+[Screenshots](assets/screenshots.md)
+
 ## Dev
 
 You need to rename `.env-template` to `.env` and fill in the missing details.
@@ -47,14 +52,15 @@ deno run start
 | 2024-11-17 | 2 h       | Continued working on the Booking App: Registration page, html and css |
 | 2024-11-22 | 3 h       | Continued working on the Booking App: Registration page, more styling and touch ups |
 | 2024-11-22 | 3 h       | Installed ZAP, reviewed a few tutorials on how to use ZAP. |
-| 2024-11-23 | 1 h       | Performed security test on the registration page: [Registration Report 1](tests/security-test-registration-page-1.md) |
-| 2024-11-23 | 3 h       | Fixed the security issues detailed in Registration Report 1. I had to include correct CSP, sanitize input and output, email validation, duplicate user checks: [Registration Report 2](tests/security-test-registration-page-2.md) |
+| 2024-11-23 | 1 h       | Performed security test on the registration page: [Registration Report 1](assets/tests/security-test-registration-page-1.md) |
+| 2024-11-23 | 3 h       | Fixed the security issues detailed in Registration Report 1. I had to include correct CSP, sanitize input and output, email validation, duplicate user checks: [Registration Report 2](assets/tests/security-test-registration-page-2.md) |
 | 2024-11-25 | 2 h       | Started working on the login page |
 | 2024-11-26 | 5 h       | Refactored the project.. new project structure and only using Deno without Hono. |
 | 2024-11-27 | 5 h       | Continued on refactoring the project. Also did the ZAP tests again on the register page after the refactor, no new vulnerabilities found. |
 | 2024-11-27 | 3 h       | Finished implementing the login page. |
-| 2024-11-27 | 0.5 h     | Performed security test on the login page: [Login Report 1](tests/security-test-login-page-1.md) 
+| 2024-11-27 | 0.5 h     | Performed security test on the login page: [Login Report 1](assets/tests/security-test-login-page-1.md) |
 | 2024-12-01 | 3 h       | Fixing the security issue found in the security test "CSRF" on the login page. I added a CSRF-token to the session and validating it with a CSRF-token sent from the login form from the login page. |
-| 2024-12-01 | 0.5 h     | Performed security test on the login page: [Login Report 2](tests/security-test-login-page-2.md) 
-| 2024-12-05 | 4 h       | Started implementing resources and reservations 
-| 2024-12-06 | 3 h       | Finished implementing resources and reservations. Admins can add and delete resources. Signed in user can add and delete reservations (admins can delete all reservations and reservers can only delete their own reservations.). Unauthenticated users will only see reservations, but not who the reserver is. 
+| 2024-12-01 | 0.5 h     | Performed security test on the login page: [Login Report 2](assets/tests/security-test-login-page-2.md) |
+| 2024-12-05 | 4 h       | Started implementing resources and reservations |
+| 2024-12-06 | 3 h       | Finished implementing resources and reservations. Admins can add and delete resources. Signed in user can add and delete reservations (admins can delete all reservations and reservers can only delete their own reservations.). Unauthenticated users will only see reservations, but not who the reserver is. |
+| 2024-12-06 | 1 h       | Added screenshots: [Screenshots](assets/screenshots.md) |

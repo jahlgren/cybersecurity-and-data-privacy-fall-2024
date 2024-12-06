@@ -1,6 +1,7 @@
 body {
   display: flex;
-  min-height: 100vh; /* <-- Does not work correctly on some phones.. */
+  /* 1.5rem * 2 for the body margin.. */
+  min-height: calc(100vh - 3rem); /* <-- Does not work correctly on some phones.. */
 }
 
 main {
