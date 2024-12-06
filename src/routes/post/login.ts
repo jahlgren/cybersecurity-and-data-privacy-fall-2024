@@ -30,7 +30,7 @@ const handlePostlogin = async ({request, session, remoteAddress}: RequestContext
     }
 
     // Successfulk login..
-    session.user = { username: user.username, token: user.userToken };
+    session.user = { username: user.username, token: user.userToken, role: user.role, birthdate: user.birthdate };
     session.refreshCsrfToken();
 
     const response = new Response(null, {status: 302, headers: { Location: '/' } });

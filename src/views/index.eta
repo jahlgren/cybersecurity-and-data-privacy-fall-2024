@@ -5,27 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Booking App</title>
   <link rel="stylesheet" href="./main.css">
-  <link rel="stylesheet" href="./index.css">
+  <link rel="stylesheet" href="./reservations.css">
 </head>
 <body>
   <div class="container">
-    <header>
-      <h1>Booking App</h1>
-      <% if(it.user) { %>
-        <nav class="user-box">
-          <span><%= it.user.username %></span>
-          <a href="/logout">Logout</a>
-        </nav>
-      <% } else { %>
-        <nav>
-          <a href="/login">Login</a>
-          <a href="/register">Register</a>
-        </nav>
-      <% } %>
-    </header>
+    <%~ include("./partials/header", { user: it.user }) %>
     <main>
-      Reservations not yet implemented.
+      <div class="toolbar">
+        <h3>Reservations</h3>
+        <% if(it.user) { %>
+          <div>
+            <% if(it.user && it.user.role === 'administrator') { %>
+              <a href="/resources">View Resources</a>
+            <% } %>
+            <button class="primary" id="add">Add Reservation</button>
+          </div>
+        <% } %>
+      </div>
+      <div id="reservations">
+        Loading reservations..
+      </div>
     </main>
   </div>
+  <div class="modal">
+    <!-- The form will be posted through JavaScript, therefore no action or method here.. -->
+    <form action="#">
+      <input type="hidden" name="csrfToken" id="csrfToken" value="<%= it.csrfToken %>" />
+      <h3>Book Resource</h3>
+      <label>
+        <span>Resource</span>
+        <select name="resource" required></select>
+      </label>
+      <label>
+        <span>From</span>
+        <input type="date" name="from" required>
+      </label>
+      <label>
+        <span>To</span>
+        <input type="date" name="to" required>
+      </label>
+      <div class="error" id="error"></div>
+      <div class="toolbar">
+        <button type="button" id="cancel">Cancel</button>
+        <button type="submit" class="primary" id="submit">Submit</button>
+      </div>
+    </form>
+  </div>
+  <script src="/reservations.js"></script>
 </body>
 </html>

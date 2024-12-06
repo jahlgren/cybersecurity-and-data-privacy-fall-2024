@@ -25,7 +25,7 @@ CREATE TABLE cbkapp_resources (
 CREATE TABLE cbkapp_reservations (
     reservation_id SERIAL PRIMARY KEY,
     reserver_token UUID REFERENCES cbkapp_users(user_token) ON DELETE CASCADE, -- Pseudonym reference
-    resource_id INT REFERENCES cbkapp_resources(resource_id),
+    resource_id INT REFERENCES cbkapp_resources(resource_id) ON DELETE CASCADE,
     reservation_start TIMESTAMP NOT NULL,
     reservation_end TIMESTAMP NOT NULL,
     CHECK (reservation_end > reservation_start)

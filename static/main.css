@@ -60,14 +60,14 @@ form {
   gap: 1rem;
 }
 
-input, select {
+input, select, textarea {
   border-radius: 4px;
   padding: 0.5rem 0.75rem;
   border: 1px solid rgba(0, 0, 0, 0.25);
   outline: 0 solid rgba(0, 102, 255, 0.25);
 }
 
-input:focus, select:focus {
+input:focus, select:focus, textarea:focus {
   border-color: rgb(0, 102, 255);
   outline-width: 2px;
 }
@@ -103,12 +103,17 @@ button:focus {
   outline-width: 2px;
 }
 
-button:hover {
+button:not(:disabled):hover {
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-button:active {
+button:not(:disabled):active {
   transform: translateY(1px);
+}
+
+button:disabled {
+  opacity: 0.5;;
+  cursor: default;
 }
 
 button.primary {
@@ -118,7 +123,108 @@ button.primary {
   color: white;
 }
 
-button.primary:hover {
+button.primary:not(:disabled):hover {
   border-color: #227aff;
   background-color: #227aff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px dashed rgba(0, 0, 0, 0.25);
+}
+
+header h1 {
+  font-size: 1.75rem;
+  margin: 0;
+  line-height: 1;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+nav.user-box {
+  flex-direction: column;
+  gap: 0;
+  align-items: flex-end;
+  line-height: 1;
+}
+nav.user-box span {
+  font-weight: 500;
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.container {
+  margin: 2rem auto;
+  width: 100%;
+  max-width: 700px;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: white;
+  box-shadow: 0 1px 0 0 rgba(25, 50, 128, 0.1), 0 5px 15px -5px rgba(25, 50, 128, 0.2);
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.toolbar h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.toolbar button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+.toolbar > div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.error {
+  color: rgb(204, 17, 17);
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 200ms ease-out;
+  pointer-events: none;
+}
+.modal * {
+  pointer-events: inherit;
+}
+.modal > form {
+  margin: auto;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 16px -4px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 400px;
+  transition: all 500ms linear;
+  transform: translateY(1rem);
+}
+.modal.open {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: all;
+}
+.modal.open > form {
+  transform: translateY(0);
+  transition-timing-function: cubic-bezier(0.175, 0.885, 0.320, 1.275);
 }

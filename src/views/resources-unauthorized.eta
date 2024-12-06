@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking App</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <div class="container">
+    <%~ include("./partials/header", { user: it.user }) %>
+    <main class="error">
+      <p>You are not authorized to add resources..</p>
+      <p><a href="/">Back to reservations</a></p>
+    </main>
+  </div>
+</body>
+</html>

@@ -8,6 +8,13 @@ import handleGetLogout from "./src/routes/get/logout.ts";
 import { RequestContext } from "./src/shared-types.ts";
 import { getSession } from "./src/services/session-service.ts";
 import { setCookie } from "https://deno.land/std@0.224.0/http/cookie.ts";
+import handleGetResources from "./src/routes/get/resources.ts";
+import handleApiPostResource from "./src/routes/api/post/resources.ts";
+import handleApiGetResource from "./src/routes/api/get/resources.ts";
+import handleApiDeleteResource from "./src/routes/api/delete/resource.ts";
+import handleApiPostReservation from "./src/routes/api/post/reservation.ts";
+import handleApiGetReservations from "./src/routes/api/get/reservations.ts";
+import handleApiDeleteReservation from "./src/routes/api/delete/reservation.ts";
 
 const PORT = 8000;
 const SCRIPT_DIR = new URL(".", import.meta.url).pathname.substring(1);
@@ -28,14 +35,25 @@ const MIME_TYPES: Record<string, string> = {
 // const ROUTES: {[method: string]: {[routeName: string]: (req: Request, info: Deno.ServeHandlerInfo<Deno.NetAddr>) => Promise<Response>}} = {
 const ROUTES: {[method: string]: {[routeName: string]: (context: RequestContext) => Promise<Response>}} = {
   GET: {
+    '/': handleGetIndex,
     '/register': handleGetRegister,
     '/login': handleGetLogin,
     '/logout': handleGetLogout,
-    '/': handleGetIndex,
+    '/resources': handleGetResources,
+    
+    '/api/resources': handleApiGetResource,
+    '/api/reservations': handleApiGetReservations
   },
   POST: {
     '/register': handlePostRegister,
-    '/login': handlePostlogin
+    '/login': handlePostlogin,
+
+    '/api/resources': handleApiPostResource,
+    '/api/reservations': handleApiPostReservation
+  },
+  DELETE: {
+    '/api/resources': handleApiDeleteResource,
+    '/api/reservations': handleApiDeleteReservation,
   }
 }
 

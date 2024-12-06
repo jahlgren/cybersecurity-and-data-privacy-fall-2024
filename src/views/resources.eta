@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking App</title>
+  <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="./resources.css">
+</head>
+<body>
+  <div class="container">
+    <%~ include("./partials/header", { user: it.user }) %>
+    <main>
+      <div class="toolbar">
+        <h2>Resources</h2>
+        <div>
+          <a href="/">View Reservations</a>
+          <button class="primary" id="add">Add Resource</button>
+        </div>
+      </div>
+      <div id="resources">Loading resources ...</div>
+    </main>
+  </div>
+  <div class="modal">
+    <!-- The form will be posted through JavaScript, therefore no action or method here.. -->
+    <form action="#">
+      <input type="hidden" name="csrfToken" value="<%= it.csrfToken %>" />
+      <h3>Add Resource</h3>
+      <label>
+        <span>Name</span>
+        <input type="text" name="name">
+      </label>
+      <label>
+        <span>Description</span>
+        <textarea name="description" rows="4"></textarea>
+      </label>
+      <div class="error" id="error"></div>
+      <div class="toolbar">
+        <button type="button" id="cancel">Cancel</button>
+        <button type="submit" class="primary">Submit</button>
+      </div>
+    </form>
+  </div>
+  <script src="resources.js"></script>
+</body>
+</html>

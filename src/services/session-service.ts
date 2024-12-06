@@ -8,7 +8,9 @@ export type SessionData = {
   expiresAt: number,
   user?: {
     token: string,
-    username: string
+    username: string,
+    birthdate: Date,
+    role: 'reserver'|'administrator'
   }
   refresh: () => void,
   refreshCsrfToken: () => void

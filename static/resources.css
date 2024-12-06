@@ -1,0 +1,38 @@
+#resources {
+  margin-top: 1rem;
+}
+.resource {
+  padding: 0.5rem;
+}
+.resource:not(:last-child) {
+ border-bottom: 1px solid rgba(0, 0, 0, 0.25); 
+}
+.resource > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.resource h3 {
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+.resource p {
+  font-size: 1rem;
+}
+.resource button {
+  padding: 0;
+  margin: 0;
+  border-radius: 999px;
+  border: 0;
+  background-color: transparent;
+}
+.resource button:hover {
+  background-color: transparent;
+  transform: rotate(10deg) scale(1.1);
+}
+.resource button svg {
+  fill: rgb(139, 0, 0);
+}
+.resource:has(button:hover) {
+  background-color: rgba(255, 0, 0, 0.1);
+}

@@ -1,0 +1,38 @@
+#reservations {
+  margin-top: 1rem;
+}
+.reservation {
+  padding: 0.5rem;
+}
+.reservation:not(:last-child) {
+ border-bottom: 1px solid rgba(0, 0, 0, 0.25); 
+}
+.reservation > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.reservation h3 {
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+.reservation p {
+  font-size: 1rem;
+}
+.reservation button {
+  padding: 0;
+  margin: 0;
+  border-radius: 999px;
+  border: 0;
+  background-color: transparent;
+}
+.reservation button:hover {
+  background-color: transparent;
+  transform: rotate(10deg) scale(1.1);
+}
+.reservation button svg {
+  fill: rgb(139, 0, 0);
+}
+.reservation:has(button:hover) {
+  background-color: rgba(255, 0, 0, 0.1);
+}

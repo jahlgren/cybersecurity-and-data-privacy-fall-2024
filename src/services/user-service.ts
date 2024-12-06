@@ -7,11 +7,12 @@ export type User = {
   username: string,
   passwordHash?: string,
   userToken: string,
+  birthdate: Date,
   role: 'reserver'|'administrator'
 }
 
 export const getUserByUsername = async (username: string) => {
-  const result = await client.queryArray(`SELECT username, password_hash, user_token, role FROM cbkapp_users WHERE username = $1`, [username]);
+  const result = await client.queryArray(`SELECT username, password_hash, user_token, birthdate, role FROM cbkapp_users WHERE username = $1`, [username]);
   if(result.rows.length !== 1)
     return null;
   const row = result.rows[0];
@@ -19,7 +20,8 @@ export const getUserByUsername = async (username: string) => {
     username: row[0] as string,
     passwordHash: row[1] as string,
     userToken: row[2] as string,
-    role: row[3] as 'reserver'|'administrator'
+    birthdate: new Date(row[3] as string),
+    role: row[4] as 'reserver'|'administrator'
   } as User;
 } 
 
