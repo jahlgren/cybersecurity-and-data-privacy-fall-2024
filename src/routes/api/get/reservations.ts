@@ -9,14 +9,14 @@ const handleApiGetReservations = async ({session}: RequestContext) => {
     // Unauthorized users should not see who booked the resource
     if(!session.user) {
       for(let i = 0; i < reservations.length; i++)
-        reservations[i].username = undefined;
+        reservations[i].reserver = undefined;
     }
     // Only administrator can see username of all reservers.
     // And all other authenticated users can only see their own username.
     else if(session.user.role !== 'administrator') {
       for(let i = 0; i < reservations.length; i++) {
-        if(reservations[i].username !== session.user.username) {
-          reservations[i].username = undefined;
+        if(reservations[i].reserver !== session.user.username) {
+          reservations[i].reserver = undefined;
         }
       }
     }

@@ -99,8 +99,12 @@ async function post() {
 }
 
 async function deleteResource(id) {
-  const response = await fetch('/api/resources?id=' + id + '&csrfToken=' + csrfTokenInput.value, {
-    method: 'delete'
+  const response = await fetch('/api/resources?id=' + id, {
+    method: 'delete',
+    headers: {
+      'Content-Type': 'application/json',
+      'CSRF-Token': csrfTokenInput.value
+    }
   });
   const data = await response.json();
   return data.id;

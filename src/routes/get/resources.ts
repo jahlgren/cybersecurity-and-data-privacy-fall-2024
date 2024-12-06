@@ -5,7 +5,7 @@ const handleGetResources = async ({session}: RequestContext) => {
   if(!session.user || session.user.role !== 'administrator') {
     return await renderTemplate('resources-unauthorized', {
       user: session && session.user ? { username: session.user.username } : undefined
-    }, 401);
+    });
   }
   return await renderTemplate('resources', {
     user: session ? { username: session.user.username } : undefined,

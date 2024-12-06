@@ -28,8 +28,8 @@
     </main>
   </div>
   <div class="modal">
-    <!-- The form will be posted through JavaScript, therefore no action or method here.. -->
-    <form action="#">
+    <!-- The form will be posted through JavaScript, therefore no action here.. -->
+    <form action="#" method="POST">
       <input type="hidden" name="csrfToken" id="csrfToken" value="<%= it.csrfToken %>" />
       <h3>Book Resource</h3>
       <label>

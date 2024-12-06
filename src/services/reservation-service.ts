@@ -2,7 +2,7 @@ import client from "../db/client.ts";
 
 export type Reservation = {
   id: number,
-  username?: string,
+  reserver?: string,
   resourceId: number,
   resourceName: string,
   startDate: Date,
@@ -27,7 +27,7 @@ export const getAllReservations = async () => {
     const row = result.rows[i];
     reservations.push({
       id: Number(row[0]),
-      username: row[1],
+      reserver: row[1],
       resourceId: Number(row[2]),
       resourceName: row[3],
       startDate: new Date(row[4] as string),
@@ -57,7 +57,7 @@ export const getReservationById = async (id: number) => {
   const row = result.rows[0];
   return {
     id: Number(row[0]),
-    username: row[1],
+    reserver: row[1],
     resourceId: Number(row[2]),
     resourceName: row[3],
     startDate: new Date(row[4] as string),
@@ -110,7 +110,7 @@ export const createReservation = async (reserverToken: string, resourceId: numbe
   const row = result.rows[0];
   return {
     id: Number(row[0]),
-    username: row[1],
+    reserver: row[1],
     resourceId: Number(row[2]),
     resourceName: row[3],
     startDate: new Date(row[4] as string),
@@ -123,6 +123,5 @@ export const deleteReservationById = async (id: number) => {
     `DELETE FROM cbkapp_reservations WHERE reservation_id = $1`,
     [id]
   );
-  console.log(id, result);
   return result.rowCount && result.rowCount > 0;
 }

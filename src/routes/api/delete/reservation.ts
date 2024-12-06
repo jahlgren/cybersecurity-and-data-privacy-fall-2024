@@ -9,7 +9,7 @@ const handleApiDeleteReservation = async ({request, session}: RequestContext) =>
   
   const url = new URL(request.url);
   const id = Number(url.searchParams.get('id'));
-  const csrfToken = url.searchParams.get('csrfToken');
+  const csrfToken = request.headers.get('CSRF-Token');
 
   if(csrfToken !== session.csrfToken) {
     return new Response(JSON.stringify({error: 'Invalid CSRF token'}), { status: 400, headers: {'Content-Type': 'application/json'} });
@@ -25,7 +25,7 @@ const handleApiDeleteReservation = async ({request, session}: RequestContext) =>
       return new Response(JSON.stringify({error: 'A reservation with the given id does not exist'}), { status: 400, headers: {'Content-Type': 'application/json'} });
     }
 
-    if(session.user.role !== 'administrator' && reservation.username !== session.user.username) {
+    if(session.user.role !== 'administrator' && reservation.reserver !== session.user.username) {
       return new Response(JSON.stringify({error: 'Premission denied'}), { status: 401, headers: {'Content-Type': 'application/json'} });
     }
 
