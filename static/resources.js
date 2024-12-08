@@ -103,7 +103,7 @@ async function deleteResource(id) {
     method: 'delete',
     headers: {
       'Content-Type': 'application/json',
-      'CSRF-Token': csrfTokenInput.value
+      'X-CSRF-Token': csrfTokenInput.value
     }
   });
   const data = await response.json();

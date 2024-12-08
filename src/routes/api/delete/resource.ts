@@ -9,7 +9,7 @@ const handleApiDeleteResource = async ({request, session}: RequestContext) => {
   
   const url = new URL(request.url);
   const id = Number(url.searchParams.get('id'));
-  const csrfToken = request.headers.get('CSRF-Token');
+  const csrfToken = request.headers.get('X-CSRF-Token');
 
   if(csrfToken !== session.csrfToken) {
     return new Response(JSON.stringify({error: 'Invalid CSRF token'}), { status: 400, headers: {'Content-Type': 'application/json'} });
