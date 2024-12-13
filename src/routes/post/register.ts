@@ -12,6 +12,7 @@ const schema = z.object({
       return !isNaN(birthDateObj.getTime());
   }, { message: 'Invalid birthdate' }),
   role: z.enum(['reserver', 'administrator']),
+  termsPrivacyAccepted: z.boolean().refine((val) => val === true, { message: 'You must accept the Terms of Service and Privacy Policy' }),
 }).refine(data => data.password === data.confirmPassword, {
   message: 'The given passwords do not match',
   path: ['confirmPassword']
@@ -25,14 +26,15 @@ const handlePostRegister = async ({request}: RequestContext) => {
   const formData = await request.formData();
 
   const email = formData.get('email') as string||'';
-  const birthdate = formData.get('birthdate') as string||'';;
-  const password = formData.get('password') as string||'';;
-  const confirmPassword = formData.get('confirmPassword') as string||'';;
-  const role = formData.get('role') as string||'';;
+  const birthdate = formData.get('birthdate') as string||'';
+  const password = formData.get('password') as string||'';
+  const confirmPassword = formData.get('confirmPassword') as string||'';
+  const role = formData.get('role') as string||'';
+  const termsPrivacyAccepted = (formData.get('terms-privacy') as string||'0') === '1';
 
   try {
 
-    schema.parse({ email, password, confirmPassword, birthdate, role });
+    schema.parse({ email, password, confirmPassword, birthdate, role, termsPrivacyAccepted });
     await createUser(email, password, birthdate, role);
     return await renderFile('register-success.html');
 

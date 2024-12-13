@@ -19,6 +19,8 @@ deno run start
 
 ## Logbook
 
+**Total hours:** 77 h
+
 | **Date**   | **Hours** | **Description**                                           |
 | :---       | :---:     | :---                                                      |
 | 2024-11-02 | 2 h       | Lecture 1 and Git Repository initialization.              |
@@ -64,3 +66,5 @@ deno run start
 | 2024-12-05 | 4 h       | Started implementing resources and reservations |
 | 2024-12-06 | 4 h       | Finished implementing resources and reservations. Admins can add and delete resources. Signed in user can add and delete reservations (admins can delete all reservations and reservers can only delete their own reservations.). Unauthenticated users will only see reservations, but not who the reserver is.<br><br>Added screenshots: [Screenshots](assets/screenshots.md) |
 | 2024-12-07 | 4 h       | Performed security test.<br><br>[Inde Page Report 1](assets/tests/security-test-index-page-1.md)<br>No real issues were found. Altho, i modified the code to not send the csrfToken as a URL-parameter and moved it into header insted.<br>[Inde Page Report 2](assets/tests/security-test-index-page-2.md)<br>The informational alert for the possible leaking of the csrfToken in the url was fixed.<br><br>[Resources Page Report 1](assets/tests/security-test-resources-page-1.md)<br>No real issues found. However, the *Loosely Scoped Cookie* should be fixed in a real production release.<br><br>Link to report for security test for the entire system:<br>[**System Security Test Report**](assets/tests/system-test.md) |
+| 2024-12-13 | 2 h       | Implemented a Privacy Policy and Terms of Service.<br>Users needs to accept them in order to register. |
+| 2024-12-13 | 1 h       | Implemented "My Account" page where users can view their information. |

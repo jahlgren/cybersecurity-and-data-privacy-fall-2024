@@ -3,6 +3,7 @@
   <% if(it.user) { %>
     <nav class="user-box">
       <span><%= it.user.username %></span>
+      <a href="/account">My Account</a>
       <a href="/logout">Logout</a>
     </nav>
   <% } else { %>

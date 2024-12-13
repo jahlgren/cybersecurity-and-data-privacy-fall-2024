@@ -15,6 +15,9 @@ import handleApiDeleteResource from "./src/routes/api/delete/resource.ts";
 import handleApiPostReservation from "./src/routes/api/post/reservation.ts";
 import handleApiGetReservations from "./src/routes/api/get/reservations.ts";
 import handleApiDeleteReservation from "./src/routes/api/delete/reservation.ts";
+import handleGetPrivacyPolicy from "./src/routes/get/privacy.ts";
+import handleGetTermsOfService from "./src/routes/get/terms.ts";
+import handleGetAccountPage from "./src/routes/get/account.ts";
 
 const PORT = 8000;
 const SCRIPT_DIR = new URL(".", import.meta.url).pathname.substring(1);
@@ -40,6 +43,9 @@ const ROUTES: {[method: string]: {[routeName: string]: (context: RequestContext)
     '/login': handleGetLogin,
     '/logout': handleGetLogout,
     '/resources': handleGetResources,
+    '/privacy': handleGetPrivacyPolicy,
+    '/terms': handleGetTermsOfService,
+    '/account': handleGetAccountPage,
     
     '/api/resources': handleApiGetResource,
     '/api/reservations': handleApiGetReservations

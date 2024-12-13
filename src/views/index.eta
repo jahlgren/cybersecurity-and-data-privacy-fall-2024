@@ -51,6 +51,7 @@
       </div>
     </form>
   </div>
+  <%~ include("./partials/footer") %>
   <script src="/reservations.js"></script>
 </body>
 </html>

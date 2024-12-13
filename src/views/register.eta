@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register - Booking App</title>
+  <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="./register.css">
+</head>
+<body>
+  <div>
+    <main>
+      <h1>Register</h1>
+      <form action="/register" method="POST">
+        <label>
+          <span>Email</span>
+          <input type="email" name="email">
+        </label>
+        <label>
+          <span>Birthdate</span>
+          <input type="date" name="birthdate">
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" name="password">
+        </label>
+        <label>
+          <span>Confirm Password</span>
+          <input type="password" name="confirmPassword">
+        </label>
+        <label>
+          <span>Role</span>
+          <select name="role">
+            <option value="reserver">Reserver</option>
+            <option value="administrator">Administrator</option>
+          </select>
+        </label>
+        <label class="terms-privacy">
+          <input type="checkbox" name="terms-privacy" value="1">
+          <span>I agree to the <a href="/terms" target="_blank">Terms of Service</a><br>and <a href="/privacy" target="_blank">Privacy Policy</a>.</span>
+        </label>
+        <button type="submit" class="primary">Register</button>
+      </form>
+    </main>
+    <%~ include("./partials/footer") %>
+  </div>
+</body>
+</html>

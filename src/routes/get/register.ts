@@ -1,7 +1,7 @@
-import { renderFile } from "../../render.ts";
+import { renderTemplate } from "../../render.ts";
 
 const handleGetRegister = async () => {
-  return await renderFile('register.html');
+  return await renderTemplate('register', {});
 }
 
 export default handleGetRegister;

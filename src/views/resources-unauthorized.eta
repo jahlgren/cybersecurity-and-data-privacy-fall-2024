@@ -14,5 +14,6 @@
       <p><a href="/">Back to reservations</a></p>
     </main>
   </div>
+  <%~ include("./partials/footer") %>
 </body>
 </html>

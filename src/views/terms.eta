@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service - Booking App</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <div class="container lg">
+    <main>
+      <div class="toolbar">
+        <h3>Terms of Service</h3>
+      </div>
+      <div class="typography">
+        <p class="error">This is a "template" and not a real terms of service for a real application!</p>
+        
+        <p>Effective Date: 2024-12-10</p>
+
+        <p>These Terms of Service (“Terms”) govern your use of the <strong>Booking App</strong> website and services (“the Service”). By using the Service, you agree to these Terms. If you do not agree to these Terms, do not use the Service.</p>
+
+        <h3>1. Eligibility</h3>
+
+        <p>You must be at least 15 years old to use the Service. By using the Service, you confirm that you meet this requirement.</p>
+
+        <h3>2. Account Registration</h3>
+
+        <p>To use certain features, you must create an account. You agree to provide accurate, up-to-date information and maintain the confidentiality of your login credentials.</p>
+        
+        <h3>3. Use of the Service</h3>
+        
+        <p>You may use the Service to:</p>
+
+        <ul>
+          <li>View and manage your reservations.</li>
+          <li>Make reservations for resources.</li>
+          <li>Administer your account and personal information.</li>
+        </ul>
+
+        <h3>4. Prohibited Uses</h3>
+
+        <p>You agree not to:</p>
+
+        <ul>
+          <li>Use the Service for illegal or unauthorized purposes.</li>
+          <li>Attempt to access or manipulate other users' data.</li>
+          <li>Engage in any activity that could harm the functionality or security of the Service.</li>
+        </ul>
+
+        <h3>5. Reservations</h3>
+
+        <ul>
+          <li>When making a reservation, you must ensure the selected dates and times are available.</li>
+          <li>Only users who meet the age requirement (15 years and older) can make reservations.</li>
+        </ul>
+
+        <h3>6. Account Termination</h3>
+
+        <p>We may suspend or terminate your account if we believe you have violated these Terms. You may request account deletion at any time by contacting us.</p>
+
+        <h3>7. Limitation of Liability</h3>
+        
+        <p>To the extent permitted by law, we are not liable for any indirect, incidental, or consequential damages arising from your use of the Service.</p>
+
+        <h3>8. Indemnification</h3>
+        
+        <p>ou agree to indemnify and hold Booking App harmless from any claims, damages, or losses arising from your use of the Service.</p>
+
+        <h3>9. Changes to the Terms</h3>
+        
+        <p>We may update these Terms from time to time. Any changes will be posted here, and the new terms will become effective immediately upon posting.</p>
+        
+        <h3>10. Governing Law</h3>
+        
+        <p>These Terms are governed by the laws of [Your Country], without regard to its conflict of law principles.</p>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>

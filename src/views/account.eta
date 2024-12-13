@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking App</title>
+  <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="./reservations.css">
+</head>
+<body>
+  <div class="container">
+    <%~ include("./partials/header", { user: it.user }) %>
+    <main>
+      <div class="toolbar">
+        <h3>My Account</h3>
+        <a href="/">Back to Home</a>
+      </div>
+      <div id="reservations">
+        <ul>
+          <li><strong>Email:</strong> <span><%= it.user.username %></span></li>
+          <li><strong>Role:</strong> <span><%= it.user.role %></span></li>
+        </ul>
+      </div>
+    </main>
+  </div>
+  <%~ include("./partials/footer") %>
+</body>
+</html>

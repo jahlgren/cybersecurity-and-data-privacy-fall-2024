@@ -41,6 +41,7 @@
       </div>
     </form>
   </div>
+  <%~ include("./partials/footer") %>
   <script src="resources.js"></script>
 </body>
 </html>

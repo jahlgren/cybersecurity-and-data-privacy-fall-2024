@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privay Policy - Booking App</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+  <div class="container lg">
+    <main>
+      <div class="toolbar">
+        <h3>Privacy Policy</h3>
+      </div>
+      <div class="typography">
+        <p class="error">This is a "template" and not a real privacy policy for a real application!</p>
+        
+        <p>Effective Date: 2024-12-10</p>
+
+        <p>At <strong>Booking App</strong>, we respect your privacy and are committed to protecting your personal data. This Privacy Policy explains how we collect, use, and store your personal information in accordance with the General Data Protection Regulation (GDPR).</p>
+
+        <h3>1. Data We Collect</h3>
+
+        <p>We collect the following types of personal data:</p>
+
+        <ul>
+          <li>Registration Data: When you register, email address, and hashed password.</li>
+          <li>Reservation Data: When making a reservation, we collect your reservation details (e.g., resource name, date, and time).</li>
+          <li>Log Data: We collect information about your use of our website, including your IP address.</li>
+        </ul>
+
+        <h3>2. How We Use Your Data</h3>
+
+        <p>Your personal data is used for the following purposes:</p>
+
+        <ul>
+          <li>To process and manage your reservations.</li>
+          <li>To provide you with access to the platform and related services.</li>
+          <li>To communicate with you regarding your account or reservations.</li>
+        </ul>
+        
+        <h3>3. Legal Basis for Processing</h3>
+        
+        <p>We process your personal data based on the following legal grounds:</p>
+
+        <ul>
+          <li>Consent: You provide consent when registering or making a reservation.</li>
+          <li>Contract: We process your data to fulfill our contract with you (e.g., processing reservations).</li>
+        </ul>
+        
+
+        <h3>4. Data Retention</h3>
+
+        <p>We retain your data for as long as necessary to provide our services or as required by law. You may request the deletion of your personal data at any time.</p>
+
+        <h3>5. Your Rights</h3>
+
+        <p>Under the GDPR, you have the right to:</p>
+
+        <ul>
+          <li>Access, update, or delete your personal data.</li>
+          <li>Object to or restrict the processing of your data.</li>
+          <li>Request the transfer of your data to another service provider.</li>
+          <li>To exercise any of these rights, please contact us at [Your Contact Information].</li>
+        </ul>
+
+        <h3>6. Data Security</h3>
+
+        <p>We implement appropriate technical and organizational measures to protect your personal data from unauthorized access, use, or disclosure.</p>
+
+        <h3>7. Third-Party Sharing</h3>
+        
+        <p>We do not share your personal data with third parties, except when required by law or to fulfill our contractual obligations (e.g., payment processing services).</p>
+
+        <h3>8. Cookies</h3>
+        
+        <p>We use cookies to improve your experience on our platform. By using our service, you consent to the use of cookies.</p>
+
+        <h3>9. Changes to This Privacy Policy</h3>
+        
+        <p>We may update this Privacy Policy from time to time. Any changes will be communicated through the app or via email.</p>
+
+      </div>
+    </main>
+  </div>
+</body>
+</html>

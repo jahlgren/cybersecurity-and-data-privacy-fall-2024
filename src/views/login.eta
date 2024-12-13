@@ -8,27 +8,30 @@
   <link rel="stylesheet" href="./login.css">
 </head>
 <body>
-  <main>
-    <h1>Login</h1>
-    <form action="/login" method="POST">
-      <input type="hidden" name="csrfToken" value="<%= it.csrfToken %>" />
-      <label>
-        <span>Email</span>
-        <input type="email" name="email" 
-          <% if(it.email) { %>
-            value="<%= it.email %>"
-          <% } %>
-        >
-      </label>
-      <label>
-        <span>Password</span>
-        <input type="password" name="password">
-      </label>
-      <% if(it.error) { %>
-        <p class="error"><%= it.error %></p>
-      <% } %>
-      <button type="submit" class="primary">Login</button>
-    </form>
-  </main>
+  <div>
+    <main>
+      <h1>Login</h1>
+      <form action="/login" method="POST">
+        <input type="hidden" name="csrfToken" value="<%= it.csrfToken %>" />
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" 
+            <% if(it.email) { %>
+              value="<%= it.email %>"
+            <% } %>
+          >
+        </label>
+        <label>
+          <span>Password</span>
+          <input type="password" name="password">
+        </label>
+        <% if(it.error) { %>
+          <p class="error"><%= it.error %></p>
+        <% } %>
+        <button type="submit" class="primary">Login</button>
+      </form>
+    </main>
+    <%~ include("./partials/footer") %>
+  </div>
 </body>
 </html>

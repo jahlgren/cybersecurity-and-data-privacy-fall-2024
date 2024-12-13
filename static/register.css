@@ -4,8 +4,12 @@ body {
   min-height: calc(100vh - 3rem); /* <-- Does not work correctly on some phones.. */
 }
 
-main {
+body > div {
   margin: auto;
+}
+
+main {
+  margin-bottom: 1.5rem;
   width: 100%;
   max-width: 400px;
   padding: 1.5rem;
@@ -16,4 +20,17 @@ main {
 
 button {
   margin-top: 2rem;
+}
+
+.terms-privacy {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+}
+.terms-privacy > span {
+  text-transform: unset;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.97);
+  letter-spacing: normal;
 }
