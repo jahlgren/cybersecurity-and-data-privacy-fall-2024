@@ -19,7 +19,7 @@ deno run start
 
 ## Logbook
 
-**Total hours:** 77 h
+**Total hours:** 81 h
 
 | **Date**   | **Hours** | **Description**                                           |
 | :---       | :---:     | :---                                                      |
